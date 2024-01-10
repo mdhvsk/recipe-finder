@@ -11,17 +11,17 @@ type Props = {
 const NavComponent: React.FC<Props> = ({ onLogout }) => {
     const [userName, setUserName] = useState<string>('');
 
-    // Simulate fetching user's name from a database
-    useEffect(() => {
-        const fetchUserName = async () => {
-            // Replace this with your actual API call
-            const response = await fetch('/api/user');
-            const data = await response.json();
-            setUserName(data.name);
-        };
+    // // Simulate fetching user's name from a database
+    // useEffect(() => {
+    //     const fetchUserName = async () => {
+    //         // Replace this with your actual API call
+    //         const response = await fetch('/api/user');
+    //         const data = await response.json();
+    //         setUserName(data.name);
+    //     };
 
-        fetchUserName().catch(console.error);
-    }, []);
+    //     fetchUserName().catch(console.error);
+    // }, []);
 
 
     return (
