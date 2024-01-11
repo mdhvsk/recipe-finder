@@ -5,10 +5,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Button, Col, Nav } from 'react-bootstrap';
 
 type Props = {
-    onLogout: () => void; // Callback function when logout is clicked
 };
 
-const NavComponent: React.FC<Props> = ({ onLogout }) => {
+const NavComponent: React.FC<Props> = ({ }) => {
     const [userName, setUserName] = useState<string>('');
 
     // // Simulate fetching user's name from a database

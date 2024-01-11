@@ -3,17 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import NavComponent from './components/NavBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Recipes from './components/Recipes';
 
 
-const onLogout = (): string => {
-  return 'string'
-}
+
 function App() {
   return (
-    <div>
-      <NavComponent onLogout={onLogout} />
-      <SearchBar />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<SearchBar />} />
+        <Route path='/recipes' element={<Recipes />} />
+
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 
