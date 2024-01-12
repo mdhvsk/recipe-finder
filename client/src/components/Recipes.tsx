@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import NavComponent from './NavBar';
+import RecipeCard from './RecipeCard';
+import { Carousel } from 'react-bootstrap';
 
 type Props = {
 
@@ -15,7 +17,7 @@ interface recipeFormat {
     cooking_instructions: string[]
 }
 
-const Recipes = (props: Props) => {
+const Recipes: React.FC = (props: Props) => {
     const { state } = useLocation();
     const [recipes, setRecipes] = useState<recipeFormat[] | null>(null)
     console.log(state)
@@ -33,17 +35,15 @@ const Recipes = (props: Props) => {
     return (
         <div>
             <NavComponent />
-            {recipes?.map((recipe: recipeFormat, index: number) => (
-                <div>
-                    <h1 key={index}>{recipe.name}</h1>
-                    <div className='recipe-state'>
-                        <h3>Cook Time: {recipe.cook_time}</h3>
-                        <h3>Calories: {recipe.calories}</h3>
-                        <h3>Servings: {recipe.servings}</h3>
+            <Carousel>
+                {recipes?.map((recipe: recipeFormat, index: number) => (
+                    <Carousel.Item>
+                        <RecipeCard {...recipe} />
+                    </Carousel.Item>
 
-                    </div>
-                </div>
-            ))}
+                ))}
+            </Carousel>
+
         </div>
 
     )

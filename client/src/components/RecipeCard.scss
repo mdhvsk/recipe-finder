@@ -1,0 +1,20 @@
+.recipeCard {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    background-color: grey;
+    min-height: calc(100vh - 50px);
+    color: white;
+    justify-content: center;
+    padding-left: 150px;
+
+    .stats {
+        display: flex;
+        justify-content: left;
+        flex-direction: row;
+
+        .item {
+            padding-right: 25px;
+        }
+    }
+}
